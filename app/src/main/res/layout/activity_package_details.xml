@@ -3,28 +3,26 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".view.details.PackageDetailsActivity">
+    android:layout_height="match_parent">
 
     <ImageView
         android:id="@+id/package_details_image"
         android:layout_width="0dp"
         android:layout_height="140dp"
+        android:contentDescription="@string/imagem_do_pacote"
         android:scaleType="centerCrop"
-        android:src="@drawable/sao_paulo_sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        tools:src="@drawable/sao_paulo_sp" />
 
     <TextView
         android:id="@+id/package_details_place"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_margin="8dp"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -43,23 +41,27 @@
 
     <TextView
         android:id="@+id/package_details_date"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/package_details_price"
         app:layout_constraintStart_toStartOf="@+id/package_details_days"
         app:layout_constraintTop_toBottomOf="@+id/package_details_days"
         tools:text="08/12 - 10/12 de 2019" />
 
     <TextView
         android:id="@+id/package_details_price"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:gravity="end"
+        android:textAlignment="textEnd"
         android:textColor="@android:color/holo_green_dark"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/package_details_date"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/package_details_date"
         tools:text="R$ 243,99" />
 
     <TextView
@@ -81,7 +83,8 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/round_orange_button"
-        android:text="Realizar Pagamento"
+        android:contentDescription="@string/bot_o_de_pagamento"
+        android:text="@string/realizar_pagamento"
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
