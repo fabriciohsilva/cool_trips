@@ -1,5 +1,6 @@
 package br.com.fabriciohsilva.cooltrips.view.main;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ListView;
@@ -9,6 +10,7 @@ import java.util.List;
 import br.com.fabriciohsilva.cooltrips.R;
 import br.com.fabriciohsilva.cooltrips.dao.PackageDAO;
 import br.com.fabriciohsilva.cooltrips.model.Package;
+import br.com.fabriciohsilva.cooltrips.view.details.PackageDetailsActivity;
 
 public class PackageListActivity extends AppCompatActivity {
 
@@ -21,6 +23,10 @@ public class PackageListActivity extends AppCompatActivity {
 
         setTitle(APPBAR_TITLE);
         configList();
+
+        Intent intent = new Intent(this, PackageDetailsActivity.class);
+        startActivity(intent);
+
     }
 
     private void configList() {
