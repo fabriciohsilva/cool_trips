@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/purchase_summary_initial_banner"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:contentDescription="@string/conteudo_do_banner_inicial"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@android:color/holo_orange_dark" />
+
+    <TextView
+        android:id="@+id/purchase_summary_congrats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="@string/parab_ns"
+        android:textSize="30sp"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintBottom_toBottomOf="@+id/purchase_summary_initial_banner"
+        app:layout_constraintEnd_toEndOf="@+id/purchase_summary_initial_banner"
+        app:layout_constraintStart_toStartOf="@+id/purchase_summary_initial_banner"
+        app:layout_constraintTop_toTopOf="@+id/purchase_summary_initial_banner" />
+
+    <TextView
+        android:id="@+id/purchase_summary_congrats_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="@string/compra_realizada_com_sucesso"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@id/purchase_summary_congrats"
+        app:layout_constraintStart_toStartOf="@id/purchase_summary_congrats"
+        app:layout_constraintTop_toBottomOf="@id/purchase_summary_congrats" />
+
+    <TextView
+        android:id="@+id/purchase_summary_resume"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="@string/confira_o_resumo_da_compra"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/purchase_summary_initial_banner" />
+
+    <ImageView
+        android:id="@+id/purchase_summary_pkg_img"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="8dp"
+        android:contentDescription="@string/imagem_do_local"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/purchase_summary_resume"
+        tools:srcCompat="@drawable/sao_paulo_sp" />
+
+    <TextView
+        android:id="@+id/purchase_summary_pkg_place"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/purchase_summary_pkg_img"
+        tools:text="São Paulo" />
+
+    <TextView
+        android:id="@+id/purchase_summary_pkg_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@+id/purchase_summary_pkg_place"
+        app:layout_constraintTop_toBottomOf="@+id/purchase_summary_pkg_place"
+        tools:text="08/12 - 08/12 de 2017" />
+
+    <TextView
+        android:id="@+id/purchase_summary_pkg_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@+id/purchase_summary_pkg_date"
+        app:layout_constraintTop_toBottomOf="@+id/purchase_summary_pkg_date"
+        tools:text="R$ 243,99" />
+
+
+</android.support.constraint.ConstraintLayout>

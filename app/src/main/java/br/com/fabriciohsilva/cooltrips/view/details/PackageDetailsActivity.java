@@ -1,22 +1,22 @@
 package br.com.fabriciohsilva.cooltrips.view.details;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import java.math.BigDecimal;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 
 import br.com.fabriciohsilva.cooltrips.R;
 import br.com.fabriciohsilva.cooltrips.model.Package;
 import br.com.fabriciohsilva.cooltrips.util.CurrencyUtil;
 import br.com.fabriciohsilva.cooltrips.util.DaysUtil;
 import br.com.fabriciohsilva.cooltrips.util.ResourceUtil;
+import br.com.fabriciohsilva.cooltrips.view.payment.PaymentActivity;
+
+import static br.com.fabriciohsilva.cooltrips.Interfaces.Constants.KEY_PACKAGE;
 
 public class PackageDetailsActivity extends AppCompatActivity {
 
@@ -29,14 +29,41 @@ public class PackageDetailsActivity extends AppCompatActivity {
 
         setTitle(APPBAR_TITLE);
 
-        Package pckgSP = new Package("São Paulo", "sao_paulo_sp", 2, new BigDecimal("243.99"));
+        getReceivedPckg();
+    }
 
-        showPlace(pckgSP);
-        showImage(pckgSP);
-        showDays(pckgSP);
-        showPrice(pckgSP);
-        showDate(pckgSP);
+    private void getReceivedPckg() {
+        Intent intent = getIntent();
+        if (intent.hasExtra(KEY_PACKAGE)) {
+            final Package pckg = (Package) intent.getSerializableExtra(KEY_PACKAGE);
 
+            initView(pckg);
+            configButton(pckg);
+        }
+    }
+
+    private void configButton(final Package pckg) {
+        Button btnPayment = findViewById(R.id.package_details_button_payment);
+        btnPayment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToPayment(pckg);
+            }
+        });
+    }
+
+    private void goToPayment(Package pckg) {
+        Intent intent = new Intent(PackageDetailsActivity.this, PaymentActivity.class);
+        intent.putExtra(KEY_PACKAGE, pckg);
+        startActivity(intent);
+    }
+
+    private void initView(Package pckg) {
+        showPlace(pckg);
+        showImage(pckg);
+        showDays(pckg);
+        showPrice(pckg);
+        showDate(pckg);
     }
 
     private void showDate(Package pckg) {

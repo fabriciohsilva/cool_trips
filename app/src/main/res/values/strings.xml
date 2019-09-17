@@ -6,4 +6,18 @@
     <string name="realizar_pagamento">Realizar Pagamento</string>
     <string name="imagem_do_pacote">Imagem do pacote</string>
     <string name="bot_o_de_pagamento">Botão de pagamento</string>
+    <string name="mask_card_name">abcdefghijklmnopqrstuvwxyzçABCDEFGHIJKLMNOPQRSTUVWXYZÇ\u0020</string>
+    <string name="mm">MM</string>
+    <string name="aa">AA</string>
+    <string name="cvc">CVC</string>
+    <string name="digite_as_informa_es_do_cart_o_de_cr_dito_que_voc_deseja_usar_para_o_pagamento">Digite as informações do cartão de crédito que você deseja usar para o pagamento</string>
+    <string name="n_mero_do_cart_o">Número do Cartão</string>
+    <string name="r_421_50">R$ 421,50</string>
+    <string name="valor_da_compra">Valor da Compra:</string>
+    <string name="nome_no_cart_o">Nome no Cartão</string>
+    <string name="finalizar_compra">Finalizar Compra</string>
+    <string name="parab_ns">Parabéns!</string>
+    <string name="confira_o_resumo_da_compra">Confira o resumo da compra:</string>
+    <string name="compra_realizada_com_sucesso">Compra Realizada com Sucesso. =]</string>
+    <string name="imagem_do_local">imagem do local</string>
 </resources>
